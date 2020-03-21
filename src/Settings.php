@@ -29,8 +29,6 @@ if ( ! class_exists( Settings::class ) ) {
 		/**
 		 * Settings constructor.
 		 *
-		 * TODO: Update this entire class for your needs, or remove the entire `src` directory this file is in and do not load it in the main plugin file.
-		 *
 		 * @param string $options_prefix Recommended: the plugin text domain, with hyphens converted to underscores.
 		 */
 		public function __construct( $options_prefix ) {

@@ -107,9 +107,9 @@ if (
 			$this->get_settings();
 
 			// Register all widget areas.
-			add_action( 'widgets_init', array( $this, 'register_sidebars' ) );
+			add_action( 'widgets_init', [ $this, 'register_sidebars' ] );
 
-			add_action( 'init', array( $this, 'enqueue_styles' ) );
+			add_action( 'init', [ $this, 'enqueue_styles' ] );
 
 			// Add filters and actions based on choices.
 			foreach ( $this->get_enabled_areas_full_details() as $value ) {
@@ -125,9 +125,9 @@ if (
 					$priority = (int) $priority;
 
 					if ( ! empty( $value['filter'] ) ) {
-						add_filter( $value['hook'], array( $this, $value['method'] ), $priority );
+						add_filter( $value['hook'], [ $this, $value['method'] ], $priority );
 					} else {
-						add_action( $value['hook'], array( $this, $value['method'] ), $priority );
+						add_action( $value['hook'], [ $this, $value['method'] ], $priority );
 					}
 				}
 			}
@@ -199,11 +199,11 @@ if (
 		public function register_sidebars() {
 			foreach ( $this->get_enabled_areas_full_details() as $value ) {
 				register_sidebar(
-					array(
+					[
 						'name'        => $value['name'],
 						'id'          => "tec_ext_widget_areas__{$value['method']}",
 						'description' => $value['desc'],
-					)
+					]
 				);
 			}
 		}
@@ -251,73 +251,73 @@ if (
 		 *                         }
 		 */
 		protected function get_all_areas() {
-			$areas = array(
+			$areas = [
 				// template
-				array(
+				[
 					'hook'   => 'tribe_events_before_template',
 					'method' => 'before_template',
 					'name'   => __( 'TEC Above Calendar', 'tribe-ext-calendar-widget-areas' ),
 					'desc'   => __( 'Widgets in this area will be shown ABOVE The Events Calendar.', 'tribe-ext-calendar-widget-areas' ),
-				),
-				array(
+				],
+				[
 					'hook'   => 'tribe_events_after_template',
 					'method' => 'after_template',
 					'name'   => __( 'TEC Below Calendar', 'tribe-ext-calendar-widget-areas' ),
 					'desc'   => __( 'Widgets in this area will be shown BELOW The Events Calendar.', 'tribe-ext-calendar-widget-areas' ),
-				),
+				],
 				// single
 				// template
-				array(
+				[
 					'hook'   => 'tribe_events_before_view',
 					'method' => 'single_before_view',
 					'name'   => __( 'TEC Single: Top', 'tribe-ext-calendar-widget-areas' ),
 					'desc'   => __( 'Widgets in this area will be shown ABOVE Single Events.', 'tribe-ext-calendar-widget-areas' ),
-				),
+				],
 				// description
-				array(
+				[
 					'hook'   => 'tribe_events_single_event_before_the_content',
 					'method' => 'single_event_before_the_content',
 					'name'   => __( 'TEC Single: Above Description', 'tribe-ext-calendar-widget-areas' ),
 					'desc'   => __( 'Widgets in this area will be shown ABOVE the Single Event Description.', 'tribe-ext-calendar-widget-areas' ),
-				),
+				],
 				// description
-				array(
+				[
 					'hook'   => 'tribe_events_single_event_after_the_content',
 					'method' => 'single_event_after_the_content',
 					'name'   => __( 'TEC Single: Below Description', 'tribe-ext-calendar-widget-areas' ),
 					'desc'   => __( 'Widgets in this area will be shown BELOW the Single Event Description.', 'tribe-ext-calendar-widget-areas' ),
-				),
+				],
 				// details
-				array(
+				[
 					'hook'   => 'tribe_events_single_event_before_the_meta',
 					'method' => 'single_event_before_the_meta',
 					'name'   => __( 'TEC Single: Above Details', 'tribe-ext-calendar-widget-areas' ),
 					'desc'   => __( 'Widgets in this area will be shown ABOVE the Single Event Details.', 'tribe-ext-calendar-widget-areas' ),
-				),
+				],
 				// details
-				array(
+				[
 					'hook'     => 'tribe_events_single_event_after_the_meta',
 					'method'   => 'single_event_after_the_meta_early',
 					'name'     => __( 'TEC Single: Below Details (Before)', 'tribe-ext-calendar-widget-areas' ),
 					'desc'     => __( 'Widgets in this area will be shown DIRECTLY BELOW the Single Event Details (before Related Events and Tickets, if displayed).', 'tribe-ext-calendar-widget-areas' ),
 					'priority' => 1,
-				),
+				],
 				// details
-				array(
+				[
 					'hook'     => 'tribe_events_single_event_after_the_meta',
 					'method'   => 'single_event_after_the_meta_late',
 					'name'     => __( 'TEC Single: Below Details (After)', 'tribe-ext-calendar-widget-areas' ),
 					'desc'     => __( 'Widgets in this area will be shown BELOW the Single Event Details (after Related Events and Tickets, if displayed).', 'tribe-ext-calendar-widget-areas' ),
 					'priority' => 100,
-				),
+				],
 				// template
-				array(
+				[
 					'hook'   => 'tribe_events_after_view',
 					'method' => 'single_after_view',
 					'name'   => __( 'TEC Single: Bottom', 'tribe-ext-calendar-widget-areas' ),
 					'desc'   => __( 'Widgets in this area will be shown BELOW Single Events.', 'tribe-ext-calendar-widget-areas' ),
-				),
-			);
+				],
+			];
 
 			return apply_filters( 'tribe_ext_calendar_widget_areas', $areas );
 		}
@@ -337,7 +337,7 @@ if (
 		 * @return array
 		 */
 		protected function get_all_areas_assoc() {
-			$all_available_assoc = array();
+			$all_available_assoc = [];
 
 			foreach ( $this->get_all_areas() as $value ) {
 				$method_name                       = $value['method'];
@@ -354,7 +354,7 @@ if (
 		 * @return array
 		 */
 		public function get_available_area_options() {
-			$options = array();
+			$options = [];
 
 			foreach ( $this->get_all_areas() as $value ) {
 				$method_name           = $value['method'];
@@ -390,7 +390,7 @@ if (
 
 			$enabled_areas = $this->get_enabled_areas_simple();
 
-			$result = array();
+			$result = [];
 
 			foreach ( $enabled_areas as $value ) {
 				if ( array_key_exists( $value, $all_available_assoc ) ) {

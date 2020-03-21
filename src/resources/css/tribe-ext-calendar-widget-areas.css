@@ -1,3 +1,5 @@
-#tribe-events li.widget {
+#tribe-events li.widget, /* v1 archives */
+.tribe-events li.widget, /* v2 archives */
+body.single-tribe_events li.widget { /* v1 & v2 single */
 	list-style-type: none;
 }

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-03-21T03:32:49+00:00\n"
+"POT-Creation-Date: 2020-03-21T03:40:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: tribe-ext-calendar-widget-areas\n"
@@ -32,4 +32,93 @@ msgstr ""
 
 #. Author URI of the plugin
 msgid "http://m.tri.be/1971"
+msgstr ""
+
+#: src/Settings.php:202
+msgid "Widget Areas"
+msgstr ""
+
+#: src/Settings.php:203
+msgid "Select which widget areas you want available on your site. Note: Unchecking all the boxes will not save. If you want all areas unchecked, just deactivate this extension."
+msgstr ""
+
+#: src/Settings_Helper.php:130
+msgid "Miscellaneous Settings"
+msgstr ""
+
+#. translators: 1: plugin name, 2: php version
+#: tribe-ext-calendar-widget-areas.php:155
+msgid "%1$s requires PHP version %2$s or newer to work. Please contact your website host and inquire about updating PHP."
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:259
+msgid "TEC Above Calendar"
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:260
+msgid "Widgets in this area will be shown ABOVE The Events Calendar."
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:265
+msgid "TEC Below Calendar"
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:266
+msgid "Widgets in this area will be shown BELOW The Events Calendar."
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:273
+msgid "TEC Single: Top"
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:274
+msgid "Widgets in this area will be shown ABOVE Single Events."
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:280
+msgid "TEC Single: Above Description"
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:281
+msgid "Widgets in this area will be shown ABOVE the Single Event Description."
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:287
+msgid "TEC Single: Below Description"
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:288
+msgid "Widgets in this area will be shown BELOW the Single Event Description."
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:294
+msgid "TEC Single: Above Details"
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:295
+msgid "Widgets in this area will be shown ABOVE the Single Event Details."
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:301
+msgid "TEC Single: Below Details (Before)"
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:302
+msgid "Widgets in this area will be shown DIRECTLY BELOW the Single Event Details (before Related Events and Tickets, if displayed)."
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:309
+msgid "TEC Single: Below Details (After)"
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:310
+msgid "Widgets in this area will be shown BELOW the Single Event Details (after Related Events and Tickets, if displayed)."
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:317
+msgid "TEC Single: Bottom"
+msgstr ""
+
+#: tribe-ext-calendar-widget-areas.php:318
+msgid "Widgets in this area will be shown BELOW Single Events."
 msgstr ""

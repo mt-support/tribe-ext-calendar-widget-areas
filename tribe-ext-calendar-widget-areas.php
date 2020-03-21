@@ -150,7 +150,15 @@ if (
 				) {
 					$message = '<p>';
 
-					$message .= sprintf( __( '%s requires PHP version %s or newer to work. Please contact your website host and inquire about updating PHP.', PLUGIN_TEXT_DOMAIN ), $this->get_name(), $php_required_version );
+					$message .= sprintf(
+					/* translators: 1: plugin name, 2: php version */
+						__(
+							'%1$s requires PHP version %2$s or newer to work. Please contact your website host and inquire about updating PHP.',
+							'tribe-ext-calendar-widget-areas'
+						),
+						$this->get_name(),
+						$php_required_version
+					);
 
 					$message .= sprintf( ' <a href="%1$s">%1$s</a>', 'https://wordpress.org/about/requirements/' );
 
@@ -248,66 +256,66 @@ if (
 				array(
 					'hook'   => 'tribe_events_before_template',
 					'method' => 'before_template',
-					'name'   => __( 'TEC Above Calendar', PLUGIN_TEXT_DOMAIN ),
-					'desc'   => __( 'Widgets in this area will be shown ABOVE The Events Calendar.', PLUGIN_TEXT_DOMAIN ),
+					'name'   => __( 'TEC Above Calendar', 'tribe-ext-calendar-widget-areas' ),
+					'desc'   => __( 'Widgets in this area will be shown ABOVE The Events Calendar.', 'tribe-ext-calendar-widget-areas' ),
 				),
 				array(
 					'hook'   => 'tribe_events_after_template',
 					'method' => 'after_template',
-					'name'   => __( 'TEC Below Calendar', PLUGIN_TEXT_DOMAIN ),
-					'desc'   => __( 'Widgets in this area will be shown BELOW The Events Calendar.', PLUGIN_TEXT_DOMAIN ),
+					'name'   => __( 'TEC Below Calendar', 'tribe-ext-calendar-widget-areas' ),
+					'desc'   => __( 'Widgets in this area will be shown BELOW The Events Calendar.', 'tribe-ext-calendar-widget-areas' ),
 				),
 				// single
 				// template
 				array(
 					'hook'   => 'tribe_events_before_view',
 					'method' => 'single_before_view',
-					'name'   => __( 'TEC Single: Top', PLUGIN_TEXT_DOMAIN ),
-					'desc'   => __( 'Widgets in this area will be shown ABOVE Single Events.', PLUGIN_TEXT_DOMAIN ),
+					'name'   => __( 'TEC Single: Top', 'tribe-ext-calendar-widget-areas' ),
+					'desc'   => __( 'Widgets in this area will be shown ABOVE Single Events.', 'tribe-ext-calendar-widget-areas' ),
 				),
 				// description
 				array(
 					'hook'   => 'tribe_events_single_event_before_the_content',
 					'method' => 'single_event_before_the_content',
-					'name'   => __( 'TEC Single: Above Description', PLUGIN_TEXT_DOMAIN ),
-					'desc'   => __( 'Widgets in this area will be shown ABOVE the Single Event Description.', PLUGIN_TEXT_DOMAIN ),
+					'name'   => __( 'TEC Single: Above Description', 'tribe-ext-calendar-widget-areas' ),
+					'desc'   => __( 'Widgets in this area will be shown ABOVE the Single Event Description.', 'tribe-ext-calendar-widget-areas' ),
 				),
 				// description
 				array(
 					'hook'   => 'tribe_events_single_event_after_the_content',
 					'method' => 'single_event_after_the_content',
-					'name'   => __( 'TEC Single: Below Description', PLUGIN_TEXT_DOMAIN ),
-					'desc'   => __( 'Widgets in this area will be shown BELOW the Single Event Description.', PLUGIN_TEXT_DOMAIN ),
+					'name'   => __( 'TEC Single: Below Description', 'tribe-ext-calendar-widget-areas' ),
+					'desc'   => __( 'Widgets in this area will be shown BELOW the Single Event Description.', 'tribe-ext-calendar-widget-areas' ),
 				),
 				// details
 				array(
 					'hook'   => 'tribe_events_single_event_before_the_meta',
 					'method' => 'single_event_before_the_meta',
-					'name'   => __( 'TEC Single: Above Details', PLUGIN_TEXT_DOMAIN ),
-					'desc'   => __( 'Widgets in this area will be shown ABOVE the Single Event Details.', PLUGIN_TEXT_DOMAIN ),
+					'name'   => __( 'TEC Single: Above Details', 'tribe-ext-calendar-widget-areas' ),
+					'desc'   => __( 'Widgets in this area will be shown ABOVE the Single Event Details.', 'tribe-ext-calendar-widget-areas' ),
 				),
 				// details
 				array(
 					'hook'     => 'tribe_events_single_event_after_the_meta',
 					'method'   => 'single_event_after_the_meta_early',
-					'name'     => __( 'TEC Single: Below Details (Before)', PLUGIN_TEXT_DOMAIN ),
-					'desc'     => __( 'Widgets in this area will be shown DIRECTLY BELOW the Single Event Details (before Related Events and Tickets, if displayed).', PLUGIN_TEXT_DOMAIN ),
+					'name'     => __( 'TEC Single: Below Details (Before)', 'tribe-ext-calendar-widget-areas' ),
+					'desc'     => __( 'Widgets in this area will be shown DIRECTLY BELOW the Single Event Details (before Related Events and Tickets, if displayed).', 'tribe-ext-calendar-widget-areas' ),
 					'priority' => 1,
 				),
 				// details
 				array(
 					'hook'     => 'tribe_events_single_event_after_the_meta',
 					'method'   => 'single_event_after_the_meta_late',
-					'name'     => __( 'TEC Single: Below Details (After)', PLUGIN_TEXT_DOMAIN ),
-					'desc'     => __( 'Widgets in this area will be shown BELOW the Single Event Details (after Related Events and Tickets, if displayed).', PLUGIN_TEXT_DOMAIN ),
+					'name'     => __( 'TEC Single: Below Details (After)', 'tribe-ext-calendar-widget-areas' ),
+					'desc'     => __( 'Widgets in this area will be shown BELOW the Single Event Details (after Related Events and Tickets, if displayed).', 'tribe-ext-calendar-widget-areas' ),
 					'priority' => 100,
 				),
 				// template
 				array(
 					'hook'   => 'tribe_events_after_view',
 					'method' => 'single_after_view',
-					'name'   => __( 'TEC Single: Bottom', PLUGIN_TEXT_DOMAIN ),
-					'desc'   => __( 'Widgets in this area will be shown BELOW Single Events.', PLUGIN_TEXT_DOMAIN ),
+					'name'   => __( 'TEC Single: Bottom', 'tribe-ext-calendar-widget-areas' ),
+					'desc'   => __( 'Widgets in this area will be shown BELOW Single Events.', 'tribe-ext-calendar-widget-areas' ),
 				),
 			);
 

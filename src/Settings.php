@@ -199,8 +199,8 @@ if ( ! class_exists( Settings::class ) ) {
 			$fields = [
 				'enabled_areas' => [
 					'type'            => 'checkbox_list',
-					'label'           => esc_html__( 'Widget Areas', PLUGIN_TEXT_DOMAIN ),
-					'tooltip'         => esc_html__( 'Select which widget areas you want available on your site. Note: Unchecking all the boxes will not save. If you want all areas unchecked, just deactivate this extension.', PLUGIN_TEXT_DOMAIN ),
+					'label'           => esc_html__( 'Widget Areas', 'tribe-ext-calendar-widget-areas' ),
+					'tooltip'         => esc_html__( 'Select which widget areas you want available on your site. Note: Unchecking all the boxes will not save. If you want all areas unchecked, just deactivate this extension.', 'tribe-ext-calendar-widget-areas' ),
 					'validation_type' => 'options_multi',
 					'options'         => $all_options,
 					'default'         => array_keys( $all_options ),

@@ -268,7 +268,7 @@ if (
 				// single
 				// template
 				[
-					'hook'   => 'tribe_events_before_view',
+					'hook'   => 'tribe_pre_get_view',
 					'method' => 'single_before_view',
 					'name'   => __( 'TEC Single: Top', 'tribe-ext-calendar-widget-areas' ),
 					'desc'   => __( 'Widgets in this area will be shown ABOVE Single Events.', 'tribe-ext-calendar-widget-areas' ),

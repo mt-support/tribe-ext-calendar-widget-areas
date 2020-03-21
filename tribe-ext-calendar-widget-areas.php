@@ -212,9 +212,9 @@ if (
 		 * Register and enqueue stylesheet
 		 */
 		public function enqueue_styles() {
-			wp_register_style( 'tribe-ext-calendar-widget-areas', plugin_dir_url( __FILE__ ) . 'src/resources/css/tribe-ext-calendar-widget-areas.css', array(), $this->get_version() );
+			wp_register_style( PLUGIN_TEXT_DOMAIN, plugin_dir_url( __FILE__ ) . 'src/resources/css/tribe-ext-calendar-widget-areas.css', [], $this->get_version() );
 
-			wp_enqueue_style( 'tribe-ext-calendar-widget-areas' );
+			wp_enqueue_style( PLUGIN_TEXT_DOMAIN );
 		}
 
 		/**

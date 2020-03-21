@@ -26,7 +26,6 @@
 namespace Tribe\Extensions\Calendar_Widget_Areas;
 
 use Tribe__Autoloader;
-use Tribe__Dependency;
 use Tribe__Events__Main;
 use Tribe__Extension;
 

@@ -235,6 +235,8 @@ if (
 		 * you want to use. You will also need to add an additional method toward the
 		 * end of this file for each area added so we know what code to execute.
 		 *
+		 * @since 1.1.0 Fixed v1 views' "TEC Above Calendar" and added support for v2 views.
+		 *
 		 * @return array {
 		 *     Every widget area supported by this extension
 		 *
@@ -251,7 +253,27 @@ if (
 		 *                         }
 		 */
 		protected function get_all_areas() {
-			$areas = [
+			$areas = $this->get_v1_areas();
+
+			// v2 views only needed a tweak.
+			if (
+				function_exists( 'tribe_events_views_v2_is_enabled' )
+				&& tribe_events_views_v2_is_enabled()
+			) {
+				$areas[0]['hook'] = 'tribe_template_after_include:events/v2/components/before';
+				$areas[1]['hook'] = 'tribe_template_after_include:events/v2/components/after';
+			}
+
+			return apply_filters( 'tribe_ext_calendar_widget_areas', $areas );
+		}
+
+		/**
+		 * Get the widget areas applicable to v1 views.
+		 *
+		 * @return array
+		 */
+		private function get_v1_areas() {
+			return [
 				// template
 				[
 					'hook'   => 'tribe_events_before_template',
@@ -318,8 +340,6 @@ if (
 					'desc'   => __( 'Widgets in this area will be shown BELOW Single Events.', 'tribe-ext-calendar-widget-areas' ),
 				],
 			];
-
-			return apply_filters( 'tribe_ext_calendar_widget_areas', $areas );
 		}
 
 		/**

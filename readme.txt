@@ -31,6 +31,7 @@ Install and activate like any other plugin!
 
 = [1.1.0] 2020-03-23 =
 
+* Feature - Updated to work with v2 views from The Events Calendar v5.0+ (January 2020).
 * Fix - The "TEC Single: Top" widget area was displaying below the single event if the event wasn't part of a recurrence series.
 * Fix - Placed the order of options to be the first under the "Advanced Template Settings" section at the bottom of the Display tab, ensuring we don't get in the middle of other options.
 * Tweak - Tribe option key changed from `tribe_ext_enabled_widget_areas` to `tribe_ext_calendar_widget_areas_enabled_areas` so you'll need to re-save your _disabled_ widget areas. By default, all widget areas are enabled.

@@ -223,9 +223,10 @@ if ( ! class_exists( Settings::class ) ) {
 		private function prefix_settings_field_keys( array $fields ) {
 			$prefixed_fields = array_combine(
 				array_map(
-					function ( $key ) {
+					static function ( $key ) {
 						return $this->get_options_prefix() . $key;
-					}, array_keys( $fields )
+					},
+					array_keys( $fields )
 				),
 				$fields
 			);

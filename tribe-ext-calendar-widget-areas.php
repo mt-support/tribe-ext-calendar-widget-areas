@@ -124,10 +124,10 @@ if (
 
 					$priority = (int) $priority;
 
-					if ( ! empty( $value['filter'] ) ) {
-						add_filter( $value['hook'], [ $this, $value['method'] ], $priority );
+					if ( empty( $value['filter'] ) ) {
+						add_action( $value['hook'], [ $this, $value['method'] ], $priority );					
 					} else {
-						add_action( $value['hook'], [ $this, $value['method'] ], $priority );
+						add_filter( $value['hook'], [ $this, $value['method'] ], $priority );
 					}
 				}
 			}
